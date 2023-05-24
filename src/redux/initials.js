@@ -5,4 +5,10 @@ export const contactsInitialState ={
         error: null
     },
     filter: ""    
-}
+};
+export const authInitialState = {
+    user: { name: null, email: null },
+    token: null,
+    isLoggedIn: false,
+    isRefreshing: false
+};
