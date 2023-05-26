@@ -1,23 +1,27 @@
 import {register} from "redux/auth/auth.operation";
 import { useDispatch } from 'react-redux';
+//import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
     const dispatch = useDispatch();
-
+    //const navigate = useNavigate()
     
     const handleSubmit =  (e) => {
         e.preventDefault();
         const form = e.currentTarget;
-
-        dispatch(register({
+        dispatch(
+            register({
                 name: form.elements.name.value,
                 email: form.elements.email.value,
-                password: form.elements.password.value
-            })
+                password: form.elements.password.value,
+            }),
+            
         );
         form.reset();
+        //navigate("/login");
     };
-    
+
     return (
         <>
         <h1>Sign Up</h1>
@@ -32,7 +36,7 @@ const Register = () => {
         <label>Email address</label>
         <input 
             name="email"
-            type="text"
+            type="email"
         /> 
         <label>Password</label>
         <input 

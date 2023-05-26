@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import css from '../Form/Form.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { createContacts, getContacts} from "redux/operation";
+import { createContacts} from "redux/operation";
 import {selectContacts} from "redux/selectors"
 
 const Form = () => {
@@ -41,13 +41,11 @@ const Form = () => {
                 type="tel"
                 name="number"
                 className={css.input}
-               // onChange={handleChange}
                 title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
             />
             </label>
             <button type="submit" 
-                onClick={() => dispatch(getContacts())}
                 className={css.btn}>Add contact</button> 
                 
         </form>
