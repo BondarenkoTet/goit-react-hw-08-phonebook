@@ -6,10 +6,6 @@ import css from "./Filter.module.css"
 const Filter = () =>{
     const dispatch = useDispatch();
 
-    // const onFilterChange = ({target: {value}}) => {
-    //     const filterValue = value;
-    //     dispatch(filteredContacts(filterValue));
-    // }
     const onFilterChange = e => {
         dispatch(filteredContacts(e.target.value));
     };
